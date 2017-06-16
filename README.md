@@ -1,11 +1,8 @@
-# README
+# Kontakt API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Rails v5.0.1
 
-Things you may want to cover:
-
-* Ruby version
+* Ruby version v2.3.1
 
 * System dependencies
 
