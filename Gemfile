@@ -1,12 +1,13 @@
 source 'https://rubygems.org'
 
 gem 'rails', '~> 5.0.1'
-gem 'rails-api'
+gem 'thin'
 gem 'pg'
 gem 'active_model_serializers'
 gem 'devise'
 
 group :development do
+  gem 'listen'
   gem 'spring'
   gem 'pry-rails'
   gem 'faker'
