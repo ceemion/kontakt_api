@@ -14,8 +14,9 @@ group :development do
   gem 'faker'
 end
 
-group :development, :test do
+group :test do
   gem 'rspec-rails', '~> 3.5'
+  gem 'shoulda-matchers'
 end
 
 # To use ActiveModel has_secure_password
