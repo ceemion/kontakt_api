@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   namespace :v1, defaults: { format: :json }, constraints: { :id => /[0-9]+(\%7C[0-9]+)*/ }, except: [:new, :edit] do
     resource :login, only: [:create], controller: :sessions
     resource :users, only: [:create]
+    resources :contacts
   end
 end
