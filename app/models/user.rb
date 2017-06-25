@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :contacts
   devise :database_authenticatable, :recoverable, :validatable
   validates_presence_of :email, :name, :phone_number
   before_save :ensure_access_token
