@@ -93,6 +93,7 @@ GEM
     pry-rails (0.3.6)
       pry (>= 0.10.4)
     rack (2.0.3)
+    rack-cors (0.4.0)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (5.0.3)
@@ -179,6 +180,7 @@ DEPENDENCIES
   listen
   pg
   pry-rails
+  rack-cors
   rails (~> 5.0.1)
   rspec-rails (~> 3.5)
   shoulda-matchers

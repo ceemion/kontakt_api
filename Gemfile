@@ -6,6 +6,7 @@ gem 'thin'
 gem 'pg'
 gem 'active_model_serializers'
 gem 'devise'
+gem 'rack-cors', :require => 'rack/cors'
 
 group :development do
   gem 'listen'
