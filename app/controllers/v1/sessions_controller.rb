@@ -1,5 +1,5 @@
-class V1::SessionsController < V1::Base_Controller
-  skip_before_action authenticate_user_from_token!
+class V1::SessionsController < V1::BaseController
+  skip_before_action :authenticate_user_from_token!
 
   def create
     user = User.find_for_database_authentication(email: params[:email])

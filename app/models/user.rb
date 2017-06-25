@@ -2,7 +2,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :recoverable, :validatable
   validates_presence_of :email, :name, :phone_number
   before_save :ensure_access_token
-  scope :find_by_email, -> (email) { where(email: email).first }
+
+  def self.find_by_email email
+    where(email: email).first
+  end
 
   def ensure_access_token
     if access_token.blank?
