@@ -6,5 +6,7 @@ Rails.application.routes.draw do
     resource :login, only: [:create], controller: :sessions
     resource :users, only: [:create]
     resources :contacts
+
+    patch '/contacts/archive/:id' => 'contacts#archive'
   end
 end

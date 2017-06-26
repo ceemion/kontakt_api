@@ -7,7 +7,7 @@ class V1::SessionsController < V1::BaseController
 
     if user.valid_password? params[:password]
       sign_in :user, user
-      render json: user, status: 200, root: nil
+      render json: user, status: :ok, root: nil
     else
       invalid_login
     end

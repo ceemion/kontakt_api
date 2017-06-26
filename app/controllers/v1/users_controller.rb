@@ -5,7 +5,7 @@ class V1::UsersController < V1::BaseController
     user = User.new user_params
 
     if user.save
-      render json: user, status: 200, root: nil
+      render json: user, status: :ok, root: nil
     else
       render json: { error: 'Your registration failed, please try again.'}, status: :unprocessable_entity
     end
