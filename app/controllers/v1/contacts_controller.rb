@@ -44,8 +44,8 @@ class V1::ContactsController < V1::BaseController
   private
 
   def contact_params
-    # phone_numbers = params.require(:contact).tap{ |w| w[:phone_numbers] = params[:contact][:phone_numbers] }
-    params.require(:contact).permit(:first_name, :last_name, :email, :address, :company, :job_title, :dob).merge(user: current_user)
+    phone_numbers = params.require(:contact).permit(phone_numbers: params[:contact][:phone_numbers].keys)
+    params.require(:contact).permit(:first_name, :last_name, :email, :address, :company, :job_title, :dob).merge(user: current_user).merge(phone_numbers)
   end
 
   def get_contact
