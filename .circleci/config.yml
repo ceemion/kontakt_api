@@ -16,15 +16,15 @@ jobs:
             - v1-dependencies-
 
       - run:
-        name: install dependencies
-        command: |
-          bundle install --jobs=4 --retry=3 --path vendor/bundle
+          name: install dependencies
+          command: |
+            bundle install --jobs=4 --retry=3 --path vendor/bundle
 
       # Store bundle cache
       - save_cache:
-        paths:
-          - ./venv
-        key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+          paths:
+            - ./venv
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 
       # Database setup
       - run: bundle exec rake db:create
@@ -33,20 +33,20 @@ jobs:
       # run tests!
       # Run rspec in parallel
       - run:
-        name: run tests
-        command: |
-          mkdir /tmp/test-results
-          TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)"
+          name: run tests
+          command: |
+            mkdir /tmp/test-results
+            TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)"
 
-          bundle exec rspec --profile 10 \
-                            --format RspecJunitFormatter \
-                            --out /tmp/test-results/rspec.xml \
-                            --format progress \
-                            "${TEST_FILES}"
+            bundle exec rspec --profile 10 \
+                              --format RspecJunitFormatter \
+                              --out /tmp/test-results/rspec.xml \
+                              --format progress \
+                              "${TEST_FILES}"
 
       # collect reports
       - store_test_results:
-        path: /tmp/test-results
+          path: /tmp/test-results
       - store_artifacts:
-        path: /tmp/test-results
-        destination: test-results
+          path: /tmp/test-results
+          destination: test-results
