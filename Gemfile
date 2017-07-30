@@ -4,7 +4,7 @@ ruby '2.3.1'
 gem 'rails', '~> 5.0.1'
 gem 'thin'
 gem 'pg'
-gem 'active_model_serializers'
+gem 'active_model_serializers', '~> 0.10.0'
 gem 'devise'
 gem 'rack-cors', :require => 'rack/cors'
 
