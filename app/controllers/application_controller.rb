@@ -29,6 +29,6 @@ class ApplicationController < ActionController::API
   end
 
   def authentication_error
-    render json: {error: "You're not authorized to view this resource!"}, status: :unauthorized
+    render json: "You're not authorized to view this resource!", status: :unauthorized
   end
 end
