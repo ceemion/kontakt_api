@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/kontakt_api
     docker:
-      - image: circleci/ruby:2.3.1
+      - image: circleci/ruby:2.4.1-node
         env:
           - PG_HOST=localhost
           - PG_USER=ubuntu
