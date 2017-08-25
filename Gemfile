@@ -17,6 +17,7 @@ end
 
 group :test do
   gem 'rspec-rails', '~> 3.5'
+  gem "rspec_junit_formatter"
   gem 'shoulda-matchers'
 end
 
