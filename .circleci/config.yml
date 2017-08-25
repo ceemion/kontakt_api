@@ -36,11 +36,12 @@ jobs:
 
       # Database setup
       - type: shell
-          name: Set up DB
-          environment:
-            DATABASE_URL: "postgres://ubuntu@localhost:5432/kontakt_api_test"
-      - run: bundle exec rake db:create
-      - run: bundle exec rake db:schema:load
+        name: Set up DB
+        environment:
+          DATABASE_URL: "postgres://ubuntu@localhost:5432/db_name"
+        command: |
+          bundle exec rake db:create db:schema:load --trace &&
+          bundle exec rake db:migrate
 
       # Run rspec in parallel
       - type: shell
